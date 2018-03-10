@@ -1,0 +1,41 @@
+<div id="top_header" style="height: 100px;">
+    <h1 style="display:inline-block;">
+        <%= @event.name %></h1>
+    <a style="display:inline-block; margin-left: 700px;" href='/events'>Events Dashboard</a>
+    <a style="display:inline-block; margin-left: 50px;" href='/users/destroy' data-method="delete">Log Out</a>
+</div>
+
+<div id = "left_column" style = "display:inline-block; width: 600px; padding: 15px;">
+<p>Host: <%= @event.user.first_name %> <%= @event.user.last_name %></p>
+<p>Date: <%= @event.date %></p>
+<p>Location: <%= @event.location %>, <%= @event.state %></p>
+<p>People who are joining the event: <%= @event.users.count %></p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th style="padding-left: 85px;">Location</th>
+        <th style="padding-left: 85px;">State</th>
+    </tr>
+    <% @event.users.each do |u| %>
+        <tr>
+            <td><%= u.first_name %> <%= u.last_name %></td>
+            <td style="padding-left: 85px;"><%= u.location %></td>
+            <td style="padding-left: 85px;"><%= u.state %></td>
+        </tr>
+    <% end %>
+</table>
+</div>
+
+<div style = "display:inline-block; vertical-align:top; margin-left: 50px; padding: 15px;">
+    <h1>Discussion about this event:</h1>
+    <div id = "actual_box" style = "border: 2px solid black; overflow: scroll; padding: 10px; height: 300px;">
+
+    </div>
+    <form action = '/events/<%= @event.id %>/comment' method = 'POST'>
+        <input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+        <h4>Add Comment</h4>
+        <textarea name = "content"></textarea>
+        <input type = "submit" value = "Submit Comments">
+    </form>
+</div>

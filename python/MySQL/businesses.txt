@@ -1,0 +1,76 @@
+Question 1:
+
+select sum(amount) from billing
+where MONTH(charged_datetime) = 3 and YEAR(charged_datetime) = 2012;
+
+Question 2:
+
+select sum(amount) from billing
+where client_id = 2
+
+Question 3:
+
+select * from sites where client_id = 10;
+
+Question 4:
+
+For client id = 1
+
+select client_id, count(domain_name), monthname(created_datetime), year(created_datetime) from sites
+where client_id = 1 group by created_datetime;
+
+For client id = 20
+
+select client_id, count(domain_name), monthname(created_datetime), year(created_datetime) from sites
+where client_id = 20 group by created_datetime;
+
+Question 5:
+
+select site_id, count(leads_id) from leads
+where month(registered_datetime) >= 01 and year(registered_datetime) >= 2011 and month(registered_datetime) <= 02 and year(registered_datetime) <= 2011
+group by site_id;
+
+Question 6:
+
+select concat(clients.first_name, ' ', clients.last_name) as name, count(leads.leads_id) as leads from clients
+join sites on sites.client_id = clients.client_id
+join leads on sites.site_id = leads.site_id
+where month(registered_datetime) >= 01 and year(registered_datetime) = 2011 and month(registered_datetime) <= 12 and year(registered_datetime) = 2011
+group by name;
+
+Question 7:
+
+select concat(clients.first_name, ' ', clients.last_name) as name, count(leads.leads_id) as leads, monthname(leads.registered_datetime) as month_generated from clients
+join sites on sites.client_id = clients.client_id
+join leads on sites.site_id = leads.site_id
+where month(leads.registered_datetime) >= 1 and year(leads.registered_datetime) = 2011 and month(leads.registered_datetime) <= 6 and year(leads.registered_datetime) = 2011
+group by leads.registered_datetime
+
+Question 8:
+
+Part 1
+
+select concat(clients.first_name, ' ', clients.last_name) as name, sites.domain_name as website, count(leads.leads_id) as leads, date(leads.registered_datetime) as date_generated from clients
+join sites on clients.client_id = sites.client_id
+join leads on sites.site_id = leads.site_id
+where month(leads.registered_datetime) >= 1 and year(leads.registered_datetime) = 2011 and month(leads.registered_datetime) <= 12 and year(registered_datetime) = 2011
+group by website order by clients.client_id
+
+Part 2
+
+select concat(clients.first_name, ' ', clients.last_name) as name, sites.domain_name as website,  count(leads.leads_id) as leads from clients
+left join sites on clients.client_id = sites.client_id
+left join leads on sites.site_id = leads.site_id
+group by website order by clients.client_id;
+
+Question 9:
+
+select concat(clients.first_name, ' ', clients.last_name) as name, sum(billing.amount) as total_revenue, monthname(billing.charged_datetime) as month, year(billing.charged_datetime) as year from clients
+join billing on billing.client_id = clients.client_id
+group by clients.client_id, year(billing.charged_datetime), month(billing.charged_datetime) order by clients.client_id;
+
+Question 10:
+
+select  concat(clients.first_name, clients.last_name) as name, group_concat(sites.domain_name, ' / ') as domains from clients
+left join sites on sites.client_id = clients.client_id
+group by clients.client_id;

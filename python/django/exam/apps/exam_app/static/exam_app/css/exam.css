@@ -1,0 +1,132 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+
+
+#wrapper {
+    margin: 0px auto;
+    padding: 15px;
+}
+
+#register {
+    display: inline-block;
+    padding: 15px;
+    margin: 5px;
+    border: 2px solid black;
+    width: 600px;
+}
+
+p {
+    font-size: 28px;
+    margin: 10px;
+}
+
+#login {
+    display: inline-block;
+    padding: 15px;
+    margin: 5px;
+    vertical-align: top;
+    border: 2px solid black;
+    width: 500px;
+}
+h1 {
+    margin: 10px;
+}
+h2 {
+    margin: 10px;
+}
+
+h3{
+    margin:10px;
+}
+
+input {
+    margin: 5px;
+    border: 1px solid black;
+    background-color: rgb(216, 216, 216);
+    font-size: 26px;
+}
+
+.submit {
+    padding: 5px 40px 5px 40px;
+    background-color: rgb(188, 230, 255);
+}
+
+.buttons {
+    background-color: transparent;
+    text-decoration: underline;
+    border:none;
+    color:blue;
+    cursor: pointer;
+}
+
+.buttons_travel {
+    background-color: transparent;
+    text-decoration: underline;
+    border:none;
+    color:blue;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.head_nav_welcome {
+    display:inline-block;
+    vertical-align: top;
+}
+.head_nav_link {
+    display:inline-block;
+    vertical-align: top;
+    margin-left: 550px;
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.head_nav_form {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-left: 550px;
+}
+
+.head_nav_form_with_home {
+    display:inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+#your_trip_schedule{
+    margin-top: 30px;
+    padding: 30px;
+}
+
+#other_trip_schedule {
+    margin-top: 50px;
+    padding: 30px;
+}
+table {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    margin: 0px;
+    padding: 10px;
+}
+
+.big_add {
+    padding: 5px 30px 5px 30px;
+}
+
+.some_indented {
+    margin-left: 20px;
+}
+
+.really_indented {
+    margin-left: 60px;
+}

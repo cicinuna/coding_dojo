@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Session Words Assignment</title>
+        {% load static %}
+        <link rel = "stylesheet" type = "text/css" href = {% static 'assignment_5/css/words.css' %}>
+    </head>
+    <body>
+        <div id = "wrapper">
+            <div id = "left">
+                <h1>Add a new Word!</h1>
+                <form action = 'process_add' method = 'POST'>
+                    {% csrf_token %} 
+                    <p>New Word: <input type = "text" name = "word" placeholder = "New Word"></p>
+                    <p>Choose Color: </p>
+                        <p><input type = "radio" name = "color" value = "Red">Red</p>
+                        <p><input type = "radio" name = "color" value = "Green">Green</p>
+                        <p><input type = "radio" name = "color" value = "Blue">Blue</p>
+                    <p><input type = "checkbox" name = "big" value = "big">Show in BIG fonts!</p>
+                    <input type = "submit" value = "Add to Session">
+                </form>
+            </div>
+            <div id = "right">
+                <form action = 'clear_session' method = 'POST'>
+                    {% csrf_token %}
+                    <input type = "submit" value = "Clear Session">
+                </form>
+                {% for pair in request.session.combo %}
+                        <p><span style = "color:{{pair.color}}; font-size: {{pair.size}}px;">{{pair.word}}</span> - added on {{time}}</p>
+                {% endfor %}                
+                
+            </div>
+        </div>
+    </body>
+</html>

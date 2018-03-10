@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <form action = '/survey' method = 'POST'>
+        <input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+        <p>Your Name: <input type = "text" name = "name"></p>
+        <p>Dojo Location: <select name = "location">
+            <option value = "Mountain View">Mountain View</option>
+            <option value = "Burbank">Burbank</option>
+            <option value = "Seattle">Seattle</option>
+        </select></p>
+        <p>Favorite Language: <select name = "language">
+            <option value = "Javascript">Javascript</option>
+            <option value = "Python">Python</option>
+            <option value = "Ruby">Ruby</option>
+            <option value = "Matlab">Matlab</option>
+            <option value = "Java">Java</option>
+        </select></p>
+        <p>Comment: <textarea name = "comment"></textarea></p>
+        <input type = "submit">
+    </form>
+</html>

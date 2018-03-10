@@ -1,0 +1,51 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    }
+
+    #wrapper {
+        width: 1000px;
+        padding: 20px;
+    }
+
+    table{
+        padding: 5px;
+        border-collapse: separate;
+        border-spacing: 2px;
+        border: 1px solid black;
+    }
+    
+    .thead{
+        font-size: 26px;
+        margin-right: 75px;
+    }
+
+    #forms {
+        margin-top: 50px;
+        width: 250px;
+    }
+
+    #inputs {
+        text-align: right;
+        font-size: 14px;
+    }
+
+    input {
+        border: 1px solid black;
+        margin-top: 5px;
+        font-size: 14px;
+        background-color: #E7E2E2;
+    }
+
+    td {
+        font-size: 14px;
+        /* border: 1px solid lightgrey; */
+    }
+
+    button {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid;
+        margin-top: 20px;
+    }

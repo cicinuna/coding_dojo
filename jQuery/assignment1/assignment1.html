@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>
+            jQuery Assignment
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src = "jquery.js"></script>
+        <!-- <script>
+            $(document).ready(function(){
+                $('.click').click(function(){
+                    alert("This was the click function.")
+                })
+
+                $('.hide').click(function(){
+                    $('.remove').hide("slow");
+                })
+
+                $('.show').click(function(){
+                    $('.toShow').show();
+                })
+
+                $('.toggle').click(function(){
+                    $('.toToggle').toggle();
+                })
+
+                $('.toggle').click(function(){
+                    $('.toToggle').toggle();
+                })
+            })
+        </script> -->
+        <!-- <script src = ""></script> -->
+        <!-- <style>
+            /* div {
+                padding: 20px;
+                border: 2px solid black;
+                border-radius: 5px;
+                width: 600px;
+                height: 100px;
+                background-color: aqua;
+            }
+
+            p {
+                display: inline-block;
+                vertical-align:top;
+                margin-left: 50px;
+                font-size: 20px;
+            }
+
+            button {
+                display:inline-block;
+                vertical-align:top;
+                margin-top: 25px;
+            }
+
+            .toShow{
+                display: none;
+            }
+
+            .toToggle{
+                display:none;
+            } */
+
+        </style> -->
+    </head>
+    <body>
+        <h1>jQuery Experiment Assignment</h1>
+
+        <div>
+            <button class = "click" type = "button">Click</button>
+            <p>This demonstrates the .click() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "hide" type = "button">Click</button>
+            <p class = "remove">This demonstrates the .hide() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "show" type = "button">Click</button>
+            <p class = "toShow">This demonstrates the .show() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "toggle" type = "button">Click</button>
+            <!-- <p class = "toToggle">Click button to show toggle() method</p> -->
+            <p class = "toToggle">This demonstrates the .toggle() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "slideDown" type = "button">Slide Down</button>
+            <button class = "slideUp" type = "button">Slide Up</button>
+            <p class = "toSlideDown">This demonstrates the .slideDown() and .slideUp() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "slideToggle" type = "button">Click</button>
+            <p class = "toSlideToggle">This demonstrates the .slideToggle() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "fadeIn" type = "button">Fade In</button>
+            <button class = "fadeOut" type = "button">Fade Out</button>
+            <p class = "tofadeIn">This demonstrates the .fadeIn() and .fadeOut() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "addClass" type = "button">Click</button>
+            <p class = "toAddClass">This demonstrates the .addClass() jQuery method. We are adding red color class to this p tag.</p>
+        </div>
+        <div>
+            <button class = "before" type = "button">Before</button>
+            <button class = "after" type = "button">After</button>
+            <p class = "toBefore">This demonstrates the .before() and .after() jQuery method.</p>
+        </div>
+        <div>
+            <button class = "append" type = "button">Click</button>
+            <p class = "toAppend">This demonstrates the .append() jQuery method. </p>
+        </div>
+        <div>
+            <button class = "html" type = "button">Click</button>
+            <p class = "toHtml">This <span>special one </span>demonstrates the <b>.html()</b> jQuery method.</p>
+        </div>
+        <div>
+            <!-- <button class = "attr" type = "button">Click</button> -->
+            <!-- <img src = "https://vignette.wikia.nocookie.net/mrmen/images/5/52/Small.gif/revision/latest?cb=20100731114437"><p class = "toAttr">stuff</p> -->
+            <p>This demonstrates the .attr() jQuery method. <em title = "super, important">Title for this emphasis is: </em></p>
+            <p class = "toAttr"></p>
+        </div>
+        <div>
+            <input class = "val" type = "text">
+            <p>This demonstrates the .val() jQuery method.</p>
+            <p class = "toVal"></p>
+        </div>
+        <div>
+            <button class = "text" type = "button">Click</button>
+            <p>This demonstrates the <span>.text()</span> jQuery method. The text inside Span tags is: </p>
+            <p class = "toText"></p>
+        </div>
+        <div id = "dataDiv">
+            <button class = "data" type = "button">Click</button>
+            <p>This demonstrates the .data() jQuery method.</p>
+            <p>The stored data were <span class = "toDataFirst"></span> and <span class = "toDataLast"></span> </p>
+        </div>
+    </body>
+</html>

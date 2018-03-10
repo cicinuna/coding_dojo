@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Color Picker</title>
+    </head>
+
+    <body {% if values_ok == True %}style = "background-color: rgb("{{red}}","{{green}}","{{blue}}");">
+        <h1>Enter your color values below:</h1>
+        <form action = '/' method = 'POST'>
+            Red: <input type = "text" name = "red" placeholder = "red value for rgb">
+            Green: <input type = "text" name = "green" placeholder = "green value for rgb">
+            Blue: <input type = "text" name = "blue" placeholder = "blue value for rgb">
+            <input type = "submit">
+        </form>
+        
+    </body>
+</html>

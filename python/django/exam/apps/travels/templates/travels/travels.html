@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Travel Dashboard</title>
+        {% load static %}
+        <link rel = "stylesheet" type = "text/css" href = {% static 'travels/css/exam.css' %}>
+    </head>
+    <body>
+        <div id = 'wrapper'>
+            <div id = 'head_nav'>
+                <h1 class = 'head_nav_welcome'>Welcome, {{request.session.user.first_name}}!</h1>
+                <form class = 'head_nav_form' action = '/logout' method = 'POST'>
+                    {% csrf_token %}
+                    <input class = 'buttons' type = "submit" value = "Log Out">
+                </form>
+            </div>
+            <div id = 'your_trip_schedule'>
+                <h1>Your Trip Schedules</h1>
+                <table>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Plan</th>
+                    </tr>
+                    {% for travels in your_travels %}
+                        <tr>
+                            <td><form action = '/travels/destination/{{travels.id}}'><input class = "buttons" type = "submit" value = "{{travels.destination}}"></form></td>
+                            <td>{{travels.start_date}}</td>
+                            <td>{{travels.end_date}}</td>
+                            <td>{{travels.plan}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div id = 'other_trip_schedule'>
+                <h1>Other User's Travel Plans</h1>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Do You Want to Join?</th>
+                    </tr>
+                    {% for travels in other_travels %}
+                        <tr>
+                            <td>{{travels.user.first.first_name}} {{travels.user.first.last_name}}</td>
+                            <td><form action = '/travels/destination/{{travels.id}}'><input class = "buttons" type = "submit" value = '{{travels.destination}}'></form></td>
+                            <td>{{travels.start_date}}</td>
+                            <td>{{travels.end_date}}</td>
+                            <td>
+                                <form action = '/process_join' method = 'POST'>
+                                    {% csrf_token %}
+                                    <input type = "hidden" name = "id" value = '{{travels.id}}'>
+                                    <input class = "buttons" type = "submit" value = "Join?">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <form action = '/add'>
+                    <input class = 'buttons_travel' type = "submit" value = "Add Travel Plan">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

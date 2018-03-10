@@ -1,0 +1,67 @@
+* {
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+
+#wrapper {
+    padding: 20px;
+    margin: 0px auto;
+    width: 1000px;
+    border: 1px solid black;
+}
+
+.current_gold {
+    height: 50px;
+}
+
+.current_gold span {
+    background-color: lightgrey;
+    border: 1px solid black;
+    padding: 5px 40px 5px 40px;
+    margin-left: 30px;
+}
+
+.containers {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    vertical-align: top;
+    border: 1px solid black;
+    margin-top: 15px;
+    margin-left: 10px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.containers h1,p {
+    margin-top: 10px;
+}
+
+.containers input {
+    margin-top: 45px;
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 16px;
+}
+
+.activities {
+    border: 1px solid black;
+    width: 980px;
+    padding: 10px;
+    height: 160px;
+    margin-top: 15px;
+    overflow:scroll;
+}
+
+.activities p {
+    margin: 1px;
+}
+
+.start_over {
+    margin-top: 45px;
+    padding: 10px;
+    border: 1px solid black;
+    font-size: 16px;
+}

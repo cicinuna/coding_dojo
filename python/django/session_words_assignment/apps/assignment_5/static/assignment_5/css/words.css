@@ -1,0 +1,16 @@
+#wrapper {
+    width: 0px auto;
+    padding: 15px;
+}
+
+#left {
+    display: inline-block;
+    vertical-align: top;
+    border-right: 6px solid black;
+    padding: 20px;
+}
+#right {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}

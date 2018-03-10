@@ -1,0 +1,83 @@
+Jasons-MacBook-Air-2:desktop JasonsMAC$ mkdir gittest
+Jasons-MacBook-Air-2:desktop JasonsMAC$ cd gittest
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git init
+Initialized empty Git repository in /Users/JasonsMAC/Desktop/gittest/.git/
+Jasons-MacBook-Air-2:gittest JasonsMAC$ touch index.html style.css aboutMe.txt
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	aboutMe.txt
+	index.html
+	style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+Jasons-MacBook-Air-2:gittest JasonsMAC$ gid add .
+-bash: gid: command not found
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git add .
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git commit -m "Added three new files to gittest"
+[master (root-commit) bbf2f03] Added three new files to gittest
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 aboutMe.txt
+ create mode 100644 index.html
+ create mode 100644 style.css
+Jasons-MacBook-Air-2:gittest JasonsMAC$ nano aboutMe.txt
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   aboutMe.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git add .
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git commit -m "updated aboutMe"
+[master ad170ca] updated aboutMe
+ 1 file changed, 5 insertions(+)
+Jasons-MacBook-Air-2:gittest JasonsMAC$ nano aboutMe.tst
+Jasons-MacBook-Air-2:gittest JasonsMAC$ rm aboutme.tst
+rm: aboutme.tst: No such file or directory
+Jasons-MacBook-Air-2:gittest JasonsMAC$ ls
+aboutMe.txt	index.html	style.css
+Jasons-MacBook-Air-2:gittest JasonsMAC$ nano aboutMe.txt
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git add .
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git commit -m "added favorite movie to aboutMe"
+[master 2dcebad] added favorite movie to aboutMe
+ 1 file changed, 2 insertions(+)
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git log
+commit 2dcebade76337665f38a700b451afa3b1edc099d (HEAD -> master)
+Author: Jason Shin <cicinuna@gmail.com>
+Date:   Mon Sep 18 16:09:03 2017 -0700
+
+    added favorite movie to aboutMe
+
+commit ad170ca1c2dd8adb5bd7babb7980965154180c74
+Author: Jason Shin <cicinuna@gmail.com>
+Date:   Mon Sep 18 16:07:55 2017 -0700
+
+    updated aboutMe
+
+commit bbf2f0324165016373a6f628018b6f2d815a4ecf
+Author: Jason Shin <cicinuna@gmail.com>
+Date:   Mon Sep 18 16:05:56 2017 -0700
+
+    Added three new files to gittest
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git revert HEAD
+[master a3a7c2d] Revert "added favorite movie to aboutMe"
+ 1 file changed, 2 deletions(-)
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git status
+On branch master
+nothing to commit, working tree clean
+Jasons-MacBook-Air-2:gittest JasonsMAC$ nano aboutMe.txt
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git add 
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git add .
+Jasons-MacBook-Air-2:gittest JasonsMAC$ git commit -m "Reverted back to previousaboutMe and added favorite book instead of favorite movie"
+[master 320e80a] Reverted back to previousaboutMe and added favorite book instead of favorite movie
+ 1 file changed, 2 insertions(+)

@@ -1,0 +1,18 @@
+* {
+    margin: 0px;
+    padding: 0x;
+    border: 0px;
+    }
+
+    #wrapper {
+        padding: 20px;
+        width: 1000px;
+        
+    }
+
+    img {
+        display:block;
+        width: 350px;
+        height: 120px;
+        margin-bottom: 2px;
+    }

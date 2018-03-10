@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Destination Details</title>
+        {% load static %}
+        <link rel = "stylesheet" type = "text/css" href = {% static 'exam_app/css/exam.css' %}>
+    </head>
+    <body>
+        <div id = 'wrapper'>
+            <div id = 'head_nav'>
+                <h1 class = 'head_nav_welcome'>Information about Your Trip!</h1>
+                <form class = 'head_nav_form' action = '/travels'>
+                    <input class = 'buttons' type = "submit" value = "Home">
+                </form>
+                <form class = 'head_nav_form_with_home' action = '/logout' method = 'POST'>
+                    {% csrf_token %}
+                    <input class = 'buttons' type = "submit" value = "Log Out">
+                </form>
+            </div>
+            <div id = 'your_trip_schedule'>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <h1>{{travels.destination}}</h1>
+                <p class = "some_indented">Planned By: {{created_user.first_name}}</p>
+                <p class = "some_indented">Description: {{travels.plan}}</p>
+                <p class = "some_indented">Travel Date From: {{travels.start_date}}</p>
+                <p class = "some_indented">Travel Date To: {{travels.end_date}}</p>
+            </div>
+            <div id = 'other_trip_schedule'>
+                <h1>Other Users Joining the Trip:</h1>
+                {% for users in other_users %}
+                <p class = "really_indented">{{users.first_name}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,238 @@
+* {
+    border:0px;
+    margin:0px;
+    padding:0px;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+    #wrapper {
+        width:1040px;
+        background-color:#011B33;
+        padding:15px;
+        padding-bottom:8px;
+    }
+
+    .header {
+        color:#2DA6CA;
+    }
+
+    .name {
+        padding:15px;
+        display:inline-block;
+        color:white;
+        font-size: 28px;
+    }
+
+    .nav {
+        display:inline-block;
+        vertical-align:top;
+        margin-left: 56px;
+        margin-top: 8px;
+        padding:15px;
+    }
+
+    .nav ul li {
+        color:white;
+        list-style-type:none;
+        font-size:18px;
+        display:inline;
+        margin-left: 70px;
+    }
+
+    #main_content {
+        width:1000px;
+        background-color:white;
+        /* height:1000px; */
+        margin-top:10px;
+        padding:20px;
+    }
+    
+    #main_img {
+        display:inline-block;
+        width: 1000px;
+        margin-bottom:20px;
+    }
+
+    #services {
+        display:inline-block;
+        width: 300px;
+        vertical-align:top;
+        color:white;
+        background-color: #1556B1;
+        padding:10px;
+    }
+
+    #projects {
+        display:inline-block;
+        width: 300px;
+        vertical-align:top;
+        color:white;
+        background-color: #1556B1;
+        padding:10px;
+        margin-left:16px;
+    }
+
+    #clients {
+        display:inline-block;
+        width: 300px;
+        vertical-align:top;
+        color:white;
+        background-color: #1556B1;
+        padding:10px;
+        margin-left:16px;
+    }
+
+    .icon_img {
+        display:inline-block;
+        width:45px;
+    }
+
+    .title_h1 {
+        display:inline-block;
+        vertical-align:top;
+        margin-top: 14px;
+        margin-left: 5px;
+    }
+
+    .small_content {
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .more_info {
+        display:inline-block;
+        text-align:center;
+        border-radius:8px;
+        background-color:#6F92F1;
+        width:160px;
+        height:30px;
+        padding-top:14px;
+        margin-left: 12px;
+        margin-top:52px;
+        margin-bottom:12px;
+    }
+
+    .more_info_projects {
+        display:inline-block;
+        text-align:center;
+        border-radius:8px;
+        background-color:#6F92F1;
+        width:160px;
+        height:30px;
+        padding-top:14px;
+        margin-left: 12px;
+        margin-top:38px;
+        margin-bottom:12px;
+    }
+
+    #advertisement {
+        width:1000px;
+        margin-top:15px;
+        color:#011B33;
+    }
+
+    .ad_title_1 {
+        display:inline-block;
+        margin-top:5px;
+        vertical-align:top;
+    }
+
+    .ad_title_2 {
+        display:inline-block;
+        vertical-align:top;
+        margin-top:5px;
+        margin-left: 360px;
+    }
+
+    .building {
+        display:inline-block;
+        vertical-align:top;
+        margin-top: 15px;
+        width: 320px;
+    }
+
+    .ad_content {
+        display:inline-block;
+        vertical-align:top;
+        width: 320px;
+        /* background-color: blue; */
+        margin-top:16px;
+        margin-left:16px;
+    }
+
+    .ad_content p {
+        margin-bottom: 15px;
+    }
+
+    .ad_content h2 {
+        color:#42CEF8;
+        margin-top:25px;
+    }
+
+    .testimonial {
+        display:inline-block;
+        vertical-align:top;
+        width:320px;
+        /* background-color:yellow; */
+        margin-top:15px;
+    }
+
+    .testimony_box {
+        display:inline-block;
+        width: 220px;
+        padding: 50px;
+        background-color:#BBE7F3;
+        margin-left:16px;
+        font-style:italic;
+        font-size: 14px;
+        padding-top:34px;
+        /* margin-top:15px; */
+        position:relative;
+    }
+    .testimony_box:after {
+        content: '';
+        position:absolute;
+        bottom:0;
+        left:20%;
+        width:0;
+        height:0;
+        border:15px solid transparent;
+        border-top-color: #BBE7F3;
+        border-bottom:0;
+        margin-left:-15px;
+        margin-bottom:-15px;
+    }
+
+    .person {
+        display:inline-block;
+        vertical-align:top;
+        margin-top: 30px;
+    }
+
+    #footer {
+        width:1000px;
+        background-color:#A0EAFF;
+        padding:20px;
+        margin-top:2px;
+
+    }
+
+    #footer ul {
+        margin-left: 290px;
+    }
+
+    #footer ul li {
+        list-style-type: none;
+        display:inline;
+        margin-left: 38px;
+    }
+
+    #footer span  {
+        color: #40C0E4;
+    }

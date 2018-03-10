@@ -1,0 +1,51 @@
+Jasons-MacBook-Air-2:~ JasonsMAC$ cd desktop
+Jasons-MacBook-Air-2:desktop JasonsMAC$ mkdir test
+Jasons-MacBook-Air-2:desktop JasonsMAC$ cd test
+Jasons-MacBook-Air-2:test JasonsMAC$ touch index.html, style.css, commands.txt
+Jasons-MacBook-Air-2:test JasonsMAC$ ls
+commands.txt	index.html,	style.css,
+Jasons-MacBook-Air-2:test JasonsMAC$ rm index.html,
+Jasons-MacBook-Air-2:test JasonsMAC$ rm style.css,
+Jasons-MacBook-Air-2:test JasonsMAC$ touch index.html style.css
+Jasons-MacBook-Air-2:test JasonsMAC$ ls
+commands.txt	index.html	style.css
+Jasons-MacBook-Air-2:test JasonsMAC$ cp index.html index_2.html
+Jasons-MacBook-Air-2:test JasonsMAC$ rm style.css
+Jasons-MacBook-Air-2:test JasonsMAC$ cd ..
+Jasons-MacBook-Air-2:desktop JasonsMAC$ mkdir destination
+Jasons-MacBook-Air-2:desktop JasonsMAC$ move \test\index_2.html \destination\index_2.html
+-bash: move: command not found
+Jasons-MacBook-Air-2:desktop JasonsMAC$ mv \test\index_2.html \destination\index_2.html
+mv: rename testindex_2.html to destinationindex_2.html: No such file or directory
+Jasons-MacBook-Air-2:desktop JasonsMAC$ cd test
+Jasons-MacBook-Air-2:test JasonsMAC$ ls
+commands.txt	index.html	index_2.html
+Jasons-MacBook-Air-2:test JasonsMAC$ mv index_2.html ..\destination
+Jasons-MacBook-Air-2:test JasonsMAC$ ls
+commands.txt	index.html
+Jasons-MacBook-Air-2:test JasonsMAC$ cd ..
+Jasons-MacBook-Air-2:desktop JasonsMAC$ cd destination
+Jasons-MacBook-Air-2:destination JasonsMAC$ ls
+Jasons-MacBook-Air-2:destination JasonsMAC$ cd ..\test
+-bash: cd: ..test: No such file or directory
+Jasons-MacBook-Air-2:destination JasonsMAC$ cd .\test
+-bash: cd: .test: No such file or directory
+Jasons-MacBook-Air-2:destination JasonsMAC$ cd ..
+Jasons-MacBook-Air-2:desktop JasonsMAC$ cd test
+Jasons-MacBook-Air-2:test JasonsMAC$ cp index.html index_2.html
+Jasons-MacBook-Air-2:test JasonsMAC$ ls
+commands.txt	index.html	index_2.html
+Jasons-MacBook-Air-2:test JasonsMAC$ mv index_2.html ~/desktop/destination
+Jasons-MacBook-Air-2:test JasonsMAC$ ls
+commands.txt	index.html
+Jasons-MacBook-Air-2:test JasonsMAC$ cd ..
+Jasons-MacBook-Air-2:desktop JasonsMAC$ cd destination
+Jasons-MacBook-Air-2:destination JasonsMAC$ ls
+index_2.html
+Jasons-MacBook-Air-2:destination JasonsMAC$ cd ..
+Jasons-MacBook-Air-2:desktop JasonsMAC$ rm -rf destination
+Jasons-MacBook-Air-2:desktop JasonsMAC$ ls
+Coding Dojo Week 1
+test
+런닝맨.E499.170910.720p-NEXT.mp4
+Jasons-MacBook-Air-2:desktop JasonsMAC$ 

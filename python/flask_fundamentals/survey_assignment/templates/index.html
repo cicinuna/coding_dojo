@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dojo Survey Index</title>
+        <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'survey.css')}}">
+    </head>
+
+    <body>
+        <div id = "wrapper">
+            <!-- added validation error messages section for validation exercise -->
+            <h1>Please complete this survey!</h1>
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endwith %}
+            <div id = "container">
+                <form action = "/results", method = "POST">
+                    <p>Your Name: <input type = "text" name = "name" placeholder = "Your Name"></p>
+                    <p>Dojo Location: <select name = "location">
+                        <option value = "San Jose">San Jose</option>
+                        <option value = "San Francisco">San Francisco</option>
+                        <option value = "Los Angeles">Los Angeles</option>
+                        <option value = "Seattle">Seattle</option>
+                    </select></p>
+                    <p>Favorite Language: <select name = "language">
+                        <option value = "Python">Python</option>
+                        <option value = "Java">Java</option>
+                        <option value = "C++">C++</option>
+                        <option value = "Ruby">Ruby</option>
+                        <option value = "Swift">Swift</option>
+                        <option value = "JavaScript">JavaScript</option>
+                        <option value = "CoffeeScript">CoffeeScript</option>
+                        <option value = "MatLab">Matlab</option>
+                    </select></p>
+                    <p class = "comment" >Comment (optional): </p><textarea name = "comment"></textarea>
+                    <p><input class = "submit" type = "submit"></p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

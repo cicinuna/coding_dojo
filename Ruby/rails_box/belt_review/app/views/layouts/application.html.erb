@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BeltReview</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if flash[:successes] %>
+    <% flash[:successes].each do |s| %>
+      <p style="color:green">
+        <%= s %>
+      </p>
+    <% end %>
+  <% end %>
+  
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+      <p style="color:red">
+        <%= e %>
+      </p>
+    <% end %>
+  <% end %>
+  
+<%= yield %>
+
+</body>
+</html>

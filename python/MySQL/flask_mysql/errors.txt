@@ -1,0 +1,24 @@
+1. Using wrong db argument name
+
+'database': d,
+
+NameError: global name 'd' is not defined
+
+2. Using no password
+
+'password': ''
+
+"Access denied for user 'root'@'localhost'(using password: NO)")
+
+3. Using Wrong port number
+
+'port': 336
+
+Can't connect to MySQL server on '127.0.0.1' (61)")
+
+4. Using wrong user name
+
+'user': 'admin'
+
+"Access denied for user 'admin'@'localhost' (using password: YES)")
+

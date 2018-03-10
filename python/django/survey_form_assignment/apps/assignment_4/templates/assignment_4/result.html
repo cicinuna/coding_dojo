@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Form Result Page</title>
+    </head>
+    <body>
+        <p>Thanks for submitting this form! You have submitted this form {{request.session.count}} times now.</p>
+        <div id = "container">
+            <h1 class = "underlined">Submitted Info:</h1>
+            <p>Name: {{request.session.name}}</p>
+            <p>Dojo Location: {{request.session.location}}</p>
+            <p>Favorite Language: {{request.session.language}}!!!</p>
+            <p class = "result_comment">Comment: {{request.session.comment}}</p>
+            <form action = '/'>
+            <input class = "go_back" type = "submit" value = "Go Back">
+            </form>
+            <!-- <button type = "button" action = "/">Go Back</button> -->
+        </div>
+    </body>
+</html>

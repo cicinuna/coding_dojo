@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Welcome to Dojo Wall!</title>
+        <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'wall.css')}}">
+    </head>
+    <body>
+        <div id = "wrapper">
+            <div id = "header">
+                <h1>CodingDojo Wall</h1>
+                <p class = "who">Welcome, {{session['first_name']}} {{session['last_name']}}!</p>
+                <form class = "logout" action = "/process_logout" method = 'POST'>
+                    <input type = "hidden" name = "logout" value = {{session['id']}}>
+                    <input class = "logout_button" type = "submit" value = "Log Out">
+                </form>
+            </div>
+            <div id  = "main">
+                <p class = "post_message_p">Post a message:</p>
+                {% with messages = get_flashed_messages() %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endwith %}
+                <form class = "post_message" action = "/process_messages" method = 'POST'>
+                    <textarea class = "message_box" name = "message_box"></textarea>
+                    <input type = "hidden" name = "post_message" value = {{session['id']}}>
+                    <input class = "message_button" type = "submit" value = "Post Message">
+                </form>
+                {% for message in messages %}
+                    <div id = "messages_box">
+                        <p class = "message_author">{{message['name']}} - {{message['date']}}</p>
+                        <p class = "message_content">{{message['message']}}</p>
+                        {% if message['user_id'] == session['id'] %}
+                            <form class = "delete" action = "/process_delete_message" method = "POST">
+                                <input type = "hidden" name = "delete_message" value = {{message['id']}}>
+                                <input class = "delete_button" type = "submit" value = "Delete Message">
+                            </form>
+                        {% endif %}
+                        {% for comment in comments %}
+                            {% if comment['message_id'] == message['id'] %}
+                                <p class = "comment_author">{{comment['name']}} - {{comment['date']}}</p>
+                                <p class = "comment_content">{{comment['comment']}}</p>
+                                {% if comment['user_id'] == session['id'] %}
+                                    <form class = "delete" action = "/process_delete_comment" method = "POST">
+                                        <input type = "hidden" name = "delete_comment" value = {{comment['id']}}>
+                                        <input class = "delete_button" type = "submit" value = "Delete Comment">
+                                    </form>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <div id = "comments">
+                            <p>Post a comment:</p>
+                            <form class = "post_comment" action = '/process_comments' method = 'POST'>
+                                <textarea class = "comment_box" name = "comment_box"></textarea>
+                                <input type = "hidden" name = "post_comment" value = {{message['id']}}>
+                                <input class = "comment_button" type = "submit" value = "Post Comment">
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- <div id = "messages_box">
+                    <p class = "message_author">Created by:</p>
+                    <p class = "message_content">This is what he wrote</p>
+
+                </div> -->
+            </div>
+        </div>
+
+    </body>
+</html>

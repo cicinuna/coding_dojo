@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    }
+
+    #wrapper {
+        margin: 0px auto;
+        width: 1000px;
+        padding: 15px;
+        border: 2px solid black;
+    }
+
+    #wrapper h1 {
+        font-size: 36px;
+    }
+
+    #images {
+        margin-top: 35px;
+        width: 610px;
+        height: 600px;
+        border: 4px solid blue;
+        padding: 10px;
+        display:inline-block;
+        overflow:scroll;
+    }
+
+    .pokeImages {
+        /* width: 50px;
+        height: 50px; */
+        display: inline-block;
+        vertical-align: top;
+        margin: 5px;
+        margin-left: 15px;
+    }
+
+    #infos {
+        
+        /* position: fixed;
+        top:92px;
+        left: 700px; */
+        display: inline-block;
+        vertical-align: top;
+        border: 4px solid red;
+        padding: 10px;
+        width: 280px;
+        height: 500px;
+        margin-left: 30px;
+        margin-top:35px;
+    }
+
+    #infos h1 {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    #infos h3, p {
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    .infoImage {
+        margin: 5px;
+        width: 160px;
+        height: 160px;
+        margin-left: 60px;
+    }

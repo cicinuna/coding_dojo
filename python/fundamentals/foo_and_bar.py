@@ -1,0 +1,32 @@
+import math
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i+2) == 0:
+            return False
+        i = i + 6
+    
+    return True
+
+def is_perfect_square(n):
+    if int(math.sqrt(n)) == math.sqrt(n):
+        return True
+
+    return False
+
+def foobar():
+    for i in range(100, 1001):
+        if is_prime(i) == True:
+            print "The number " + str(i) + " is a prime number! FOO"
+        elif is_perfect_square(i) == True:
+            print "The number " + str(i) + " is a perfect square! BAR"
+
+foobar()

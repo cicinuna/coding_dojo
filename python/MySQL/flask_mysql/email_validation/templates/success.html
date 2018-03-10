@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Success Page</title>
+        <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = 'email.css')}}">
+    </head>
+    <body>
+        <div id = "flash_success">
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endwith %}
+        </div>
+        <div id = "list">
+            <h1>Email Address Entered:</h1>
+            {% for email in emails %}
+                <p>{{email['email']}}  {{email['created_at']}} <form action = '/delete' method = 'POST'><input type = "hidden" name = "delete_email" value = {{email['email']}}><input type = "hidden" name = "delete" value = {{email['id']}}><input type = "submit" value = "Delete"></form></p>
+            {% endfor %}
+        </div>
+    </body>
+</html>

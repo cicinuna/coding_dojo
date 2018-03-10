@@ -1,0 +1,134 @@
+<div id="top_header" style="height: 100px;">
+    <h1 style="display:inline-block;">Welcome,
+        <%= current_user.first_name %>!</h1>
+    <a style="display:inline-block; margin-left: 700px;" href='/users/<%= current_user.id %>'>Edit My Profile</a>
+    <a style="display:inline-block; margin-left: 50px;" href='/users/destroy' data-method="delete">Log Out</a>
+</div>
+
+<div id="my_state_events">
+    <h3>Here are some of the events at your state:</h3>
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>Name</th>
+            <th style="padding-left: 85px;">Date</th>
+            <th style="padding-left: 85px;">Location</th>
+            <th style="padding-left: 85px;">Host</th>
+            <th style="padding-left: 85px;">Action / Status</th>
+        </tr>
+        <% @local_events.each do |e| %>
+            <tr>
+                <td><form action='/events/<%= e.id%>'>
+                    <input type="submit" style = "background-color:transparent; text-decoration:underline; border:none; color:blue; cursor:pointer;" value="<%= e.name %>">
+                </form></td>
+                <td style="padding-left: 85px;"><%= e.date %></td>
+                <td style="padding-left: 85px;"><%= e.location %></td>
+                <td style="padding-left: 85px;"><%= e.user.first_name %></td>
+                <td style="padding-left: 85px;">ACTION</td>
+            </tr>
+        <% end %>
+    </table>
+</div>
+
+<div id="other_state_events">
+    <h3>Here are some of the events on the other states:</h3>
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>Name</th>
+            <th style="padding-left: 85px;">Date</th>
+            <th style="padding-left: 85px;">Location</th>
+            <th style="padding-left: 85px;">State</th>
+            <th style="padding-left: 85px;">Host</th>
+            <th style="padding-left: 85px;">Action / Status</th>
+        </tr>
+            <% @other_events.each do |e| %>
+                <tr>
+                    <td>
+                        <form action = '/events/<%= e.id%>'>
+                            <input type = "submit" style = "background-color:transparent; text-decoration:underline; border:none; color:blue; cursor:pointer;" value = "<%= e.name %>">
+                        </form>
+                    </td>
+                    <td style="padding-left: 85px;">
+                        <%= e.date %>
+                    </td>
+                    <td style="padding-left: 85px;">
+                        <%= e.location %>
+                    </td>
+                    <td style="padding-left: 85px;">
+                        <%= e.state %>
+                    </td>
+                    <td style="padding-left: 85px;">
+                        <%= e.user.first_name %>
+                    </td>
+                    <td style="padding-left: 85px;">ACTION</td>
+                </tr>
+            <% end %>
+    </table>
+</div>
+
+<h1>Add your Event:</h1>
+<form action='/events/create' method='POST'>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>Name:
+        <input type="text" name="name">
+    </p>
+    <p>Date:
+        <input type="text" name="date" placeholder="mm/dd/yyyy">
+    </p>
+    <p>Location:
+        <input type="text" name="location">
+        <select name="state">
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AZ">AZ</option>
+            <option value="AR">AR</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="DC">DC</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="IA">IA</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+        </select>
+    </p>
+    <input type="submit" value="Add Event">
+</form>

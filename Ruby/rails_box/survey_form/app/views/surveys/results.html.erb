@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <p><%= flash[:success]%></p>
+    <h1>Submitted Information:</h1>
+    <p>Name: <%= @input[:name] %></p>
+    <p>Location: <%= @input[:location] %></p>
+    <p>Language: <%= @input[:language] %></p>
+    <p>Comment: <%= @input[:comment] %></p>
+    <form action = '/'>
+        <input type = "submit" value = "Go Back">
+    </form>
+</html>

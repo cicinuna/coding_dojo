@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Add a student to all bootcamp courses</title>
+        <style>
+            th {
+                border: 1px solid black;
+                margin: 0px;
+            }
+            td {
+                border: 1px solid black;
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <h1>Add a new course</h1>
+        <form action = '/courses/add_course' method = 'POST'>
+            {% csrf_token %}
+            <p>Name: <input type = "text" name = "course_name"></p>
+            <p>Description: <textarea name = "description"></textarea></p>
+            <input type = "submit" value = "Add">
+        </form>
+        <h1>Courses</h1>
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+            {% for course in courses %}
+                <tr>
+                    <td>{{course.name}}</td>
+                    <td>{{course.desc}}</td>
+                    <td>{{course.created_at}}</td>
+                    <td><form action = '/courses/remove/{{course.id}}'><input style = "font-size: 18px; background-color: white; color:blue; border:0; border-bottom: 1px solid blue;" type = "submit" value = "remove"></form></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
